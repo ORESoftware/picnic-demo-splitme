@@ -1,5 +1,5 @@
 .PHONY: build-image run-local
-IMAGE_TAG=picnichealth/split-me
+IMAGE_TAG=picnichealth/split-me:1.2
 
 build:
 	docker build -t $(IMAGE_TAG) .

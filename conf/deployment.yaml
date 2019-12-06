@@ -1,0 +1,21 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: picnic
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: picnic
+  replicas: 3 # tells deployment to run 3 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: picnic
+    spec:
+      containers:
+        - name: picnic
+          imagePullPolicy: Never
+          image: picnichealth/split-me:1.2
+          ports:
+            - containerPort: 80
