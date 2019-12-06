@@ -12,10 +12,8 @@ for run in {1..1}; do
 
     sleep 1;
 #
-
   ( curl -X POST -F "pdf=@$resume_path" "http://192.168.99.100:32449/split/$sha" ) &
-
-#   ( curl "http://192.168.99.100:30838" ) &
+#   ( curl "http://192.168.99.100:32449" ) &
 
   done;
 
